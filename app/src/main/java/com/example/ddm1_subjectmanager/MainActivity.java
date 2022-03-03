@@ -21,16 +21,21 @@ public class MainActivity extends AppCompatActivity {
         subjects.add(new Subject("PiC", R.drawable.piclogo, "Pensament i Creativitat"));
 
         String names[] = new String[subjects.size()];
+        String descriptions[] = new String[subjects.size()];
+        int[] logos = new int[subjects.size()];
 
         for (int i = 0; i < subjects.size(); i++) {
             names[i] = subjects.get(i).getTitle();
+            logos[i] = subjects.get(i).getLogoImage();
+            descriptions[i] = subjects.get(i).getDescription();
         }
+
+
 
         list = findViewById(R.id.listView);
 
-        ArrayAdapter<String> array = new ArrayAdapter<String>(this,R.layout.activity_listview, R.id.subjectTitle,names);
-
-        list.setAdapter(array);
+        CustomAdapter ca = new CustomAdapter(getApplicationContext(),names,logos,descriptions);
+        list.setAdapter(ca);
 
 
 
