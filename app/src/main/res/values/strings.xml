@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DDM1-SubjectManager</string>
+    <string name="logo_of_the_subject">Logo of the subject</string>
 </resources>
