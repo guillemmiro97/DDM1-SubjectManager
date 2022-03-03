@@ -19,9 +19,10 @@ public class MainActivity extends AppCompatActivity {
 
         subjects.add(new Subject("ASO", R.drawable.asologo, "Administració de Sistemes Operatius"));
         subjects.add(new Subject("PiC", R.drawable.piclogo, "Pensament i Creativitat"));
+        subjects.add(new Subject("ViC", R.drawable.viclogo, "Virtualització i Cloud"));
 
-        String names[] = new String[subjects.size()];
-        String descriptions[] = new String[subjects.size()];
+        String[] names = new String[subjects.size()];
+        String[] descriptions = new String[subjects.size()];
         int[] logos = new int[subjects.size()];
 
         for (int i = 0; i < subjects.size(); i++) {
@@ -30,15 +31,9 @@ public class MainActivity extends AppCompatActivity {
             descriptions[i] = subjects.get(i).getDescription();
         }
 
-
-
         list = findViewById(R.id.listView);
 
         CustomAdapter ca = new CustomAdapter(getApplicationContext(),names,logos,descriptions);
         list.setAdapter(ca);
-
-
-
-
     }
 }
