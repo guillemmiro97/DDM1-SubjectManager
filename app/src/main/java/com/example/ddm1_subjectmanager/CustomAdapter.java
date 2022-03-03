@@ -24,8 +24,6 @@ public class CustomAdapter extends BaseAdapter {
         layoutInflater = (LayoutInflater.from(context));
     }
 
-
-
     @Override
     public int getCount() {
         return subjectTitles.length;
@@ -53,6 +51,5 @@ public class CustomAdapter extends BaseAdapter {
         description.setText(subjectDescriptions[i]);
 
         return view;
-
     }
 }

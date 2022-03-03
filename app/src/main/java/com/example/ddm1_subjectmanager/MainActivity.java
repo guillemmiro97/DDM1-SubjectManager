@@ -2,8 +2,10 @@ package com.example.ddm1_subjectmanager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -35,5 +37,14 @@ public class MainActivity extends AppCompatActivity {
 
         CustomAdapter ca = new CustomAdapter(getApplicationContext(),names,logos,descriptions);
         list.setAdapter(ca);
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(MainActivity.this, SubjectActivity.class);
+                intent.putExtra("subject", subjects.get(i));
+                startActivity(intent);
+            }
+        });
     }
 }

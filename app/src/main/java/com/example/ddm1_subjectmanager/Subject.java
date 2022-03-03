@@ -1,6 +1,8 @@
 package com.example.ddm1_subjectmanager;
 
-public class Subject {
+import java.io.Serializable;
+
+public class Subject implements Serializable {
     private String title;
     private int logoImage;
     private String description;
@@ -15,23 +17,11 @@ public class Subject {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public int getLogoImage() {
         return logoImage;
     }
 
-    public void setLogoImage(int logoImage) {
-        this.logoImage = logoImage;
-    }
-
     public String getDescription() {
         return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 }
